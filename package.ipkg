@@ -1,7 +1,9 @@
 package example
 
-depends = contrib
+depends = base
+        , contrib
         , elab-util
+        , prelude
         , sop
 
 modules = Data.Time
