@@ -7,10 +7,19 @@
   description = "Example Idris2 Package";
 
   outputs = { self, nixpkgs, idr2nix }:
-    idr2nix.idris.single {
-      packageName = "example";
+    idr2nix.idris.multiple {
       sources = builtins.fromJSON (builtins.readFile ./sources.json);
-      ipkg = "package.ipkg";
+      packageDetails = [
+        {
+          name = "example";
+          ipkg = "package.ipkg";
+        }
+        {
+          name = "idris2-lsp";
+          ipkg = "idris2-lsp/idris2-lsp.ipkg";
+        }
+      ];
+      defaultPackage = "example";
       src = ./.;
       idris2api = true;
       extraDeps = pkgs: [

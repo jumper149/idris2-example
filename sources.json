@@ -9,6 +9,15 @@
       "ipkg": "elab-util.ipkg",
       "name": "elab-util"
     },
+    "lsp-lib": {
+      "source": {
+        "url": "https://github.com/idris-community/lsp-lib",
+        "rev": "03851daae0c0274a02d94663d8f53143a94640da",
+        "sha256": "sha256-ICW9oOOP70hXneJFYInuPY68SZTDw10dSxSPTW4WwWM="
+      },
+      "ipkg": "lsp-lib.ipkg",
+      "name": "lsp-lib"
+    },
     "sop": {
       "source": {
         "url": "https://github.com/stefan-hoeck/idris2-sop",
@@ -20,6 +29,7 @@
     }
   },
   "sorted": [
+    "lsp-lib",
     "elab-util",
     "sop"
   ],

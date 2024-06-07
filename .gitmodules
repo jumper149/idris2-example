@@ -1,0 +1,3 @@
+[submodule "idris2-lsp"]
+	path = idris2-lsp
+	url = https://github.com/jumper149/idris2-lsp
