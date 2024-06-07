@@ -1,4 +1,7 @@
 module Main
 
+import Data.Html
+import Data.Html.Render
+
 main : IO ()
-main = pure ()
+main = print (render f)
