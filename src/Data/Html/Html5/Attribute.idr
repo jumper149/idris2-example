@@ -54,6 +54,10 @@ autocomplete : String -> Attribute
 autocomplete = attribute "autocomplete"
 
 public export
+autofocus : String -> Attribute
+autofocus = attribute "autofocus"
+
+public export
 autoplay : String -> Attribute
 autoplay = attribute "autoplay"
 
@@ -177,6 +181,10 @@ enterkeyhint : String -> Attribute
 enterkeyhint = attribute "enterkeyhint"
 
 public export
+exportparts : String -> Attribute
+exportparts = attribute "exportparts"
+
+public export
 for : String -> Attribute
 for = attribute "for"
 
@@ -237,6 +245,10 @@ id : String -> Attribute
 id = attribute "id"
 
 public export
+inert : String -> Attribute
+inert = attribute "inert"
+
+public export
 integrity : String -> Attribute
 integrity = attribute "integrity"
 
@@ -250,12 +262,32 @@ inputmode : String -> Attribute
 inputmode = attribute "inputmode"
 
 public export
+is : String -> Attribute
+is = attribute "is"
+
+public export
 ismap : String -> Attribute
 ismap = attribute "ismap"
 
 public export
+itemid : String -> Attribute
+itemid = attribute "itemid"
+
+public export
 itemprop : String -> Attribute
 itemprop = attribute "itemprop"
+
+public export
+itemref : String -> Attribute
+itemref = attribute "itemref"
+
+public export
+itemscope : String -> Attribute
+itemscope = attribute "itemscope"
+
+public export
+itemtype : String -> Attribute
+itemtype = attribute "itemtype"
 
 public export
 kind : String -> Attribute
@@ -328,6 +360,10 @@ name : String -> Attribute
 name = attribute "name"
 
 public export
+nonce : String -> Attribute
+nonce = attribute "nonce"
+
+public export
 novalidate : String -> Attribute
 novalidate = attribute "novalidate"
 
@@ -338,6 +374,10 @@ open_ = attribute "open"
 public export
 optimum : String -> Attribute
 optimum = attribute "optimum"
+
+public export
+part : String -> Attribute
+part = attribute "part"
 
 public export
 pattern : String -> Attribute
@@ -354,6 +394,10 @@ placeholder = attribute "placeholder"
 public export
 playsinline : String -> Attribute
 playsinline = attribute "playsinline"
+
+public export
+popover : String -> Attribute
+popover = attribute "popover"
 
 public export
 poster : String -> Attribute
@@ -496,6 +540,11 @@ usemap = attribute "usemap"
 public export
 value : String -> Attribute
 value = attribute "value"
+
+-- TODO: Experimental.
+public export
+virtualkeyboardpolicy : String -> Attribute
+virtualkeyboardpolicy = attribute "virtualkeyboardpolicy"
 
 public export
 width : String -> Attribute
