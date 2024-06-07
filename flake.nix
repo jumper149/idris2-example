@@ -12,6 +12,6 @@
       sources = builtins.fromJSON (builtins.readFile ./sources.json);
       ipkg = "package.ipkg";
       src = ./.;
-      idris2api = false;
+      idris2api = true;
     };
 }
