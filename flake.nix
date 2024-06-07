@@ -13,5 +13,11 @@
       ipkg = "package.ipkg";
       src = ./.;
       idris2api = true;
+      extraDeps = pkgs: [
+        pkgs.coreutils # TODO: Required to run wrapper script around built package executable.
+      ];
+      extraShellPackages = pkgs: [
+        pkgs.rlwrap # TODO: Required to run the `idris2` repl.
+      ];
     };
 }
