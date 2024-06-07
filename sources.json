@@ -1,0 +1,31 @@
+{
+  "sources": {
+    "elab-util": {
+      "source": {
+        "url": "https://github.com/stefan-hoeck/idris2-elab-util",
+        "rev": "4ee05e54b80986f05ee5a79e16cb51d4ef6cfb65",
+        "sha256": "sha256-yHKTtUx91kvdGEwimpbMg+c4rEasfuk+W97yiwTNgcQ="
+      },
+      "ipkg": "elab-util.ipkg",
+      "name": "elab-util"
+    },
+    "sop": {
+      "source": {
+        "url": "https://github.com/stefan-hoeck/idris2-sop",
+        "rev": "050dc401257bc521bd171dbdff9728f32909e0d4",
+        "sha256": "sha256-ThB8b2fjD4tJ2MofmoWv79HSrGm7CPuX2du0XR9NjRo="
+      },
+      "ipkg": "sop.ipkg",
+      "name": "sop"
+    }
+  },
+  "sorted": [
+    "elab-util",
+    "sop"
+  ],
+  "idris2": {
+    "url": "https://github.com/idris-lang/Idris2",
+    "rev": "e0b9a027e7de2ea8922ed3865fc9182f068f27f8",
+    "sha256": "sha256-MFShd2f7p3kbkONHhQKpp/lZ7UlHQdG1qcESCAPY0/o="
+  }
+}

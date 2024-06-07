@@ -1,0 +1,15 @@
+package example
+
+depends = contrib
+        , elab-util
+        , sop
+
+modules = Data.Time
+        , Data.Time.Calendar.Julian
+        , Data.Time.ISO8601
+
+main = Main
+
+executable = example
+
+sourcedir = "src"
