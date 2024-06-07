@@ -1,10 +1,15 @@
 module Data.Html.Html5.Attribute
 
 import Data.Html.Core
+import Data.Html.Html5.Attribute.Value
 
 public export
 attribute : String -> String -> Attribute
 attribute name value = MkAttribute { name, value }
+
+public export
+attributeBoolean : String -> Attribute
+attributeBoolean name = MkAttribute { name, value = "" }
 
 
 
@@ -26,8 +31,11 @@ action = attribute "action"
 
 %deprecate
 public export
-align : String -> Attribute
-align = attribute "align"
+align :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["left", "top", "right", "bottom"]} ->
+  Attribute
+align value = attribute "align" value
 
 public export
 allow : String -> Attribute
@@ -42,12 +50,15 @@ as : String -> Attribute
 as = attribute "as"
 
 public export
-async : String -> Attribute
-async = attribute "async"
+async : Attribute
+async = attributeBoolean "async"
 
 public export
-autocapitalize : String -> Attribute
-autocapitalize = attribute "autocapitalize"
+autocapitalize :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["none", "off", "sentences", "on", "words", "characters"]} ->
+  Attribute
+autocapitalize value = attribute "autocapitalize" value
 
 public export
 autocomplete : String -> Attribute
@@ -58,8 +69,8 @@ autofocus : String -> Attribute
 autofocus = attribute "autofocus"
 
 public export
-autoplay : String -> Attribute
-autoplay = attribute "autoplay"
+autoplay : Attribute
+autoplay = attributeBoolean "autoplay"
 
 public export
 background : String -> Attribute
@@ -74,16 +85,19 @@ border : String -> Attribute
 border = attribute "border"
 
 public export
-capture : String -> Attribute
-capture = attribute "capture"
+capture :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["user", "environment"]} ->
+  Attribute
+capture value = attribute "capture" value
 
 public export
 charset : String -> Attribute
 charset = attribute "charset"
 
 public export
-checked : String -> Attribute
-checked = attribute "checked"
+checked : Attribute
+checked = attributeBoolean "checked"
 
 public export
 cite : String -> Attribute
@@ -110,20 +124,30 @@ content : String -> Attribute
 content = attribute "content"
 
 public export
-contenteditable : String -> Attribute
-contenteditable = attribute "contenteditable"
+contenteditable :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["true", "", "false", "plaintext-only"]} ->
+  Attribute
+contenteditable value = attribute "contenteditable" value
 
 public export
-controls : String -> Attribute
-controls = attribute "controls"
+controls : Attribute
+controls = attributeBoolean "controls"
+
+public export
+controlslist : String -> Attribute
+controlslist = attribute "controlslist"
 
 public export
 coords : String -> Attribute
 coords = attribute "coords"
 
 public export
-crossorigin : String -> Attribute
-crossorigin = attribute "crossorigin"
+crossorigin :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["anonymous", "", "use-credentials"]} ->
+  Attribute
+crossorigin value = attribute "crossorigin" value
 
 -- TODO: Experimental.
 public export
@@ -148,28 +172,34 @@ default_ : String -> Attribute
 default_ = attribute "default"
 
 public export
-defer : String -> Attribute
-defer = attribute "defer"
+defer : Attribute
+defer = attributeBoolean "defer"
 
 public export
-dir : String -> Attribute
-dir = attribute "dir"
+dir :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["ltr", "rtl", "auto"]} ->
+  Attribute
+dir value = attribute "dir" value
 
 public export
 dirname : String -> Attribute
 dirname = attribute "dirname"
 
 public export
-disabled : String -> Attribute
-disabled = attribute "disabled"
+disabled : Attribute
+disabled = attributeBoolean "disabled"
 
 public export
 download : String -> Attribute
 download = attribute "download"
 
 public export
-draggable : String -> Attribute
-draggable = attribute "draggable"
+draggable :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["true", "false"]} ->
+  Attribute
+draggable value = attribute "draggable" value
 
 public export
 enctype : String -> Attribute
@@ -221,8 +251,11 @@ height : String -> Attribute
 height = attribute "height"
 
 public export
-hidden : String -> Attribute
-hidden = attribute "hidden"
+hidden :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["", "hidden", "until-found"]} ->
+  Attribute
+hidden value = attribute "hidden" value
 
 public export
 high : String -> Attribute
@@ -237,8 +270,11 @@ hreflang : String -> Attribute
 hreflang = attribute "hreflang"
 
 public export
-httpEquiv : String -> Attribute
-httpEquiv = attribute "http-equiv"
+httpEquiv :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["content-security-policy", "content-type", "default-style", "x-ua-compatible", "refresh"]} ->
+  Attribute
+httpEquiv value = attribute "http-equiv" value
 
 public export
 id : String -> Attribute
@@ -258,16 +294,19 @@ intrinsicsize : String -> Attribute
 intrinsicsize = attribute "intrinsicsize"
 
 public export
-inputmode : String -> Attribute
-inputmode = attribute "inputmode"
+inputmode :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["none", "text", "decimal", "numeric", "tel", "search", "email", "url"]} ->
+  Attribute
+inputmode value = attribute "inputmode" value
 
 public export
 is : String -> Attribute
 is = attribute "is"
 
 public export
-ismap : String -> Attribute
-ismap = attribute "ismap"
+ismap : Attribute
+ismap = attributeBoolean "ismap"
 
 public export
 itemid : String -> Attribute
@@ -290,8 +329,11 @@ itemtype : String -> Attribute
 itemtype = attribute "itemtype"
 
 public export
-kind : String -> Attribute
-kind = attribute "kind"
+kind :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["subtitles", "captions", "descriptions", "chapters", "metadata"]} ->
+  Attribute
+kind value = attribute "kind" value
 
 public export
 label : String -> Attribute
@@ -308,16 +350,19 @@ language = attribute "language"
 
 -- TODO: Experimental.
 public export
-loading : String -> Attribute
-loading = attribute "loading"
+loading :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["eager", "lazy"]} ->
+  Attribute
+loading value = attribute "loading" value
 
 public export
 list : String -> Attribute
 list = attribute "list"
 
 public export
-loop : String -> Attribute
-loop = attribute "loop"
+loop : Attribute
+loop = attributeBoolean "loop"
 
 public export
 low : String -> Attribute
@@ -340,8 +385,11 @@ media : String -> Attribute
 media = attribute "media"
 
 public export
-method : String -> Attribute
-method = attribute "method"
+method :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["post", "get", "dialog"]} ->
+  Attribute
+method value = attribute "method" value
 
 public export
 min : String -> Attribute
@@ -364,12 +412,12 @@ nonce : String -> Attribute
 nonce = attribute "nonce"
 
 public export
-novalidate : String -> Attribute
-novalidate = attribute "novalidate"
+novalidate : Attribute
+novalidate = attributeBoolean "novalidate"
 
 public export
-open_ : String -> Attribute
-open_ = attribute "open"
+open_ : Attribute
+open_ = attributeBoolean "open"
 
 public export
 optimum : String -> Attribute
@@ -392,8 +440,8 @@ placeholder : String -> Attribute
 placeholder = attribute "placeholder"
 
 public export
-playsinline : String -> Attribute
-playsinline = attribute "playsinline"
+playsinline : Attribute
+playsinline = attributeBoolean "playsinline"
 
 public export
 popover : String -> Attribute
@@ -404,12 +452,15 @@ poster : String -> Attribute
 poster = attribute "poster"
 
 public export
-preload : String -> Attribute
-preload = attribute "preload"
+preload :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["none", "metadata", "auto", ""]} ->
+  Attribute
+preload value = attribute "preload" value
 
 public export
-readonly : String -> Attribute
-readonly = attribute "readonly"
+readonly : Attribute
+readonly = attributeBoolean "readonly"
 
 public export
 referrerpolicy : String -> Attribute
@@ -420,12 +471,12 @@ rel : String -> Attribute
 rel = attribute "rel"
 
 public export
-required : String -> Attribute
-required = attribute "required"
+required : Attribute
+required = attributeBoolean "required"
 
 public export
-reversed : String -> Attribute
-reversed = attribute "reversed"
+reversed : Attribute
+reversed = attributeBoolean "reversed"
 
 public export
 role : String -> Attribute
@@ -444,8 +495,11 @@ sandbox : String -> Attribute
 sandbox = attribute "sandbox"
 
 public export
-scope : String -> Attribute
-scope = attribute "scope"
+scope :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["none", "metadata", "auto", ""]} ->
+  Attribute
+scope value = attribute "scope" value
 
 %deprecate
 public export
@@ -453,8 +507,8 @@ scoped : String -> Attribute
 scoped = attribute "scoped"
 
 public export
-selected : String -> Attribute
-selected = attribute "selected"
+selected : Attribute
+selected = attributeBoolean "selected"
 
 public export
 shape : String -> Attribute
@@ -477,8 +531,11 @@ span : String -> Attribute
 span = attribute "span"
 
 public export
-spellcheck : String -> Attribute
-spellcheck = attribute "spellcheck"
+spellcheck :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["true", "", "false"]} ->
+  Attribute
+spellcheck value = attribute "spellcheck" value
 
 public export
 src : String -> Attribute
@@ -526,8 +583,11 @@ title : String -> Attribute
 title = attribute "title"
 
 public export
-translate : String -> Attribute
-translate = attribute "translate"
+translate :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["yes", "", "no"]} ->
+  Attribute
+translate value = attribute "translate" value
 
 public export
 type : String -> Attribute
@@ -551,5 +611,8 @@ width : String -> Attribute
 width = attribute "width"
 
 public export
-wrap : String -> Attribute
-wrap = attribute "wrap"
+wrap :
+  (value : String) ->
+  {auto 0 prf : IsEnum value ["hard", "soft", "off"]} ->
+  Attribute
+wrap value = attribute "wrap" value
