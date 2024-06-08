@@ -1,6 +1,7 @@
 module Data.Html.Html5.Element
 
 import Data.Html.Core
+import Data.Html.Html5.Element.Attribute
 
 public export
 plain : String -> Html
@@ -15,8 +16,12 @@ node tag attributes htmls = MkHtmlElement (MkElement { tag, attributes, content 
 -- Main root
 
 public export
-html : List Attribute -> List Html -> Html
-html = node "html"
+html :
+  (attributes : List Attribute) ->
+  (content : List Html) ->
+  {auto 0 prf : Satisfying IsAttributeForHtml attributes} ->
+  Html
+html attributes content = node "html" attributes content
 
 -- Document metadata
 

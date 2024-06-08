@@ -14,6 +14,7 @@ modules
   , Data.Html.Html5.Attribute
   , Data.Html.Html5.Attribute.Value
   , Data.Html.Html5.Element
+  , Data.Html.Html5.Element.Attribute
   , Data.Html.Render
   , Data.Time
   , Data.Time.Calendar.Julian
