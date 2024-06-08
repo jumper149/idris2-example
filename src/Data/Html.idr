@@ -2,9 +2,9 @@ module Data.Html
 
 import Data.Html.Core
 import Data.Html.Html5.Attribute
-import Data.Html.Html5.Attribute.Value
+import Data.Html.Html5.Attribute.Check
 import Data.Html.Html5.Element
-import Data.Html.Html5.Element.Attribute
+import Data.Html.Html5.Element.Check
 
 someStrings : List String
 someStrings = ["a", "b", "c"]

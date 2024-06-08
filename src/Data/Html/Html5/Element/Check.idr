@@ -1,4 +1,4 @@
-module Data.Html.Html5.Element.Attribute
+module Data.Html.Html5.Element.Check
 
 import Data.Html.Core
 

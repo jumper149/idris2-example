@@ -1,7 +1,7 @@
 module Data.Html.Html5.Element
 
 import Data.Html.Core
-import Data.Html.Html5.Element.Attribute
+import Data.Html.Html5.Element.Check
 
 public export
 plain : String -> Html

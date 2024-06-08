@@ -1,7 +1,7 @@
 module Data.Html.Html5.Attribute
 
 import Data.Html.Core
-import Data.Html.Html5.Attribute.Value
+import Data.Html.Html5.Attribute.Check
 
 public export
 attribute : String -> String -> Attribute

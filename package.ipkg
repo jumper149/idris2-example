@@ -12,9 +12,9 @@ modules
   , Data.Html.Core
   , Data.Html.Element
   , Data.Html.Html5.Attribute
-  , Data.Html.Html5.Attribute.Value
+  , Data.Html.Html5.Attribute.Check
   , Data.Html.Html5.Element
-  , Data.Html.Html5.Element.Attribute
+  , Data.Html.Html5.Element.Check
   , Data.Html.Render
   , Data.Time
   , Data.Time.Calendar.Julian
