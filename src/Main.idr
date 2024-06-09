@@ -1,6 +1,6 @@
 module Main
 
-import Data.Html
+import Data.Html.Example
 import Data.Html.Render
 
 main : IO ()
