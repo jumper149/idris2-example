@@ -4,11 +4,11 @@ import Data.Html.Core
 import Data.Html.Html5.Attribute.Check
 
 public export
-attribute : String -> String -> Attribute
+attribute : (name : String) -> (value : String) -> Attribute
 attribute name value = MkAttribute { name, value }
 
 public export
-attributeBoolean : String -> Attribute
+attributeBoolean : (name : String) -> Attribute
 attributeBoolean name = MkAttribute { name, value = "" }
 
 

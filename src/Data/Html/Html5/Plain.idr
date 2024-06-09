@@ -6,7 +6,6 @@ public export
 plain : String -> Html
 plain = MkHtmlPlain
 
-
 public export
 escaped : String -> Html
 escaped = MkHtmlPlain . pack . escape . unpack
