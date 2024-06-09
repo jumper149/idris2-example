@@ -10,7 +10,6 @@ depends
 modules
   = Data.Html
   , Data.Html.Core
-  , Data.Html.Element
   , Data.Html.Html5.Attribute
   , Data.Html.Html5.Attribute.Check
   , Data.Html.Html5.Element

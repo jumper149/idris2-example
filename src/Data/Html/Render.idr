@@ -2,9 +2,25 @@ module Data.Html.Render
 
 import Data.Html.Core
 
--- TODO: Escape name and value.
+private
+escapeAttributeValue : List Char -> List Char
+escapeAttributeValue = \case
+  '"' :: xs => unpack "&quot;" ++ escapeAttributeValue xs
+  x :: xs => x :: escapeAttributeValue xs
+  Nil => Nil
+
+private
+escapedAttributeValue : String -> String
+escapedAttributeValue = pack . escapeAttributeValue . unpack
+
+private
 renderAttribute : Attribute -> String
-renderAttribute attribute = attribute.name ++ "=\"" ++ attribute.value ++ "\""
+renderAttribute attribute = concat
+  [ attribute.name
+  , "=\""
+  , escapedAttributeValue attribute.value
+  , "\""
+  ]
 
 private
 renderAttributes : List Attribute -> String
@@ -12,7 +28,7 @@ renderAttributes = \case
   [] => ""
   a :: as => " " ++ renderAttribute a ++ renderAttributes as
 
-public export
+export
 render : Html -> String
 render = \case
   MkHtmlPlain string => string
