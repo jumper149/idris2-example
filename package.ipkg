@@ -13,7 +13,6 @@ modules
   , Data.Html.Html5.Attribute
   , Data.Html.Html5.Attribute.Check
   , Data.Html.Html5.Element
-  , Data.Html.Html5.Element.Check
   , Data.Html.Html5.Plain
   , Data.Html.Render
   , Data.Time

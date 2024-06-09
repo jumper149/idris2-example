@@ -1,10 +1,13 @@
 module Data.Html.Html5.Element
 
 import Data.Html.Core
-import Data.Html.Html5.Element.Check
 
 public export
-node : (tag : String) -> (attributes : List Attribute) -> (content : List Html) -> Html
+node :
+  (tag : String) ->
+  (attributes : List Attribute) ->
+  (content : List Html) ->
+  Html
 node tag attributes htmls = MkHtmlElement (MkElement { tag, attributes, content = MkHtmlList htmls })
 
 
@@ -12,12 +15,8 @@ node tag attributes htmls = MkHtmlElement (MkElement { tag, attributes, content 
 -- Main root
 
 public export
-html :
-  (attributes : List Attribute) ->
-  (content : List Html) ->
-  {auto 0 prf : Satisfying IsAttributeForHtml attributes} ->
-  Html
-html attributes content = node "html" attributes content
+html : List Attribute -> List Html -> Html
+html = node "html"
 
 -- Document metadata
 
